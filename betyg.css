@@ -1,0 +1,54 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+#table{
+  width: 94vw;
+  height: 10vh;
+  margin: 3vw;
+  background-color: lightblue;
+  text-align: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+th{
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+td{
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.left{
+  border-left: 0px;
+}
+
+#title{
+  background-color: lightblue;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: 5vh;
+  width: 80vw;
+  text-align: center;
+}
+#button{
+  text-align: center;
+  width: 10vw;
+  height: 10vh;
+  margin-left: 45vw;
+}
+#text{
+  text-align: center;
+  border: 1px solid black;
+}
+#textbar{
+  height: 5vh;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-left: 10vw;
+  margin-top: 1vh;
+}

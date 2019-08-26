@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="swe">
+  <head>
+
+    <!-- Skriven av Emil Ahlroth -->
+
+    <link href="betyg.css" rel="stylesheet" >
+
+    <title> Räkna ut meritvärde </title>
+
+
+    <script>
+
+    // Function som räknar ut meritvärde och hur mycket poäng som man har fått
+    function rekna(){
+        var total = 0;
+        var num = 1;
+        var point;
+        var betyg = 26;
+        var svar;
+        var merit = 0;
+        var totmerit = 0;
+
+        for (var i = 0; i < 25; i++)
+        {
+          point = document.getElementById(num).innerHTML;
+          point = parseInt(point);
+          svar = document.getElementById(betyg).value;
+
+
+            switch (svar) {
+              case "A":
+                merit += 20 * point;
+                break;
+
+              case "B":
+                merit += 17.5 * point;
+                break;
+
+              case "C":
+                merit += 15 * point;
+                break;
+
+              case "D":
+                merit += 12.5 * point;
+                break;
+
+              case "E":
+                merit += 10 * point;
+                break;
+            }
+
+          if (svar == "F")
+            {
+              betyg++;
+              num ++;
+            }
+
+            else
+            {
+              total += point;
+              num++;
+              betyg++;
+            }
+          }
+
+
+        totmerit = merit / 2400; // Gymnasiearbetes poäng används inte för att räkna ut meritvärde
+
+        document.getElementById("text").innerHTML = "Du har " + total +
+        " poäng av totalt 2500. Du behöver minst 2250 för att få gymnasieexam." +
+        " Ditt meritvärde är " + totmerit;
+
+        }
+    </script>
+
+
+  </head>
+  <body>
+
+    <!-- En table där alla kurser och deras poäng står
+        Varje Kurs har en select där man väljer vad man har för betyg-->
+
+    <h1 id="title"> Räkna ut hur mycket poäng du har </h1>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th class = "left"> Kurs  </th>
+          <th> Antal poäng </th>
+          <th> Betyg </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class = "left"> Matte1c </td>
+          <td id = "1">  100  </td>
+          <td> <select id = "26">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </td>
+        </tr>
+      <tr>
+        <tr>
+          <td class = "left"> Matte2c </td>
+          <td id="2"> 100  </td>
+          <td> <select id="27">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+           </td>
+        </tr>
+        <tr>
+            <td class = "left"> Matte3c </td>
+            <td id="3"> 100 </td>
+            <td>
+             <select  id="28" >
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+             </td>
+        </tr>
+        <tr>
+          <td class = "left"> Matte4c </td>
+          <td id="4"> 100 </td>
+          <td>
+           <select  id="29" >
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </select>
+        </tr>
+        <tr>
+          <td class = "left"> Svenska 1 </td>
+          <td id="5"> 100 </td>
+          <td>
+           <select id="30" >
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class = "left"> Svenska 2 </td>
+        <td id="6"> 100 </td>
+        <td>
+         <select id="31">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select>
+      </td>
+      </tr>
+      <tr>
+        <td class = "left"> Svenska 3 </td>
+        <td id="7"> 100 </td>
+        <td>
+         <select id="32">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select> </td>
+      </tr>
+      </tbody>
+      <tr>
+        <td class = "left"> Idrott och hälsa 1 </td>
+        <td id="8"> 100 </td>
+        <td>
+         <select id="33">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select>
+      </td>
+      </tr>
+      <tr>
+        <td class = "left"> Samhällskunskap 1b </td>
+        <td id="9"> 100 </td>
+        <td>
+         <select id="34">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select>
+      </td>
+      </tr>
+      <tr>
+        <td class = "left"> Historia 1a1 </td>
+        <td id="10"> 50 </td>
+        <td>
+         <select id="35">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select>
+      </td>
+      </tr>
+      <tr>
+        <td class = "left"> Religionskunskap 1 </td>
+        <td id="11"> 50 </td>
+        <td>
+         <select id="36">
+          <option> F </option>
+          <option> E </option>
+          <option> D </option>
+          <option> C </option>
+          <option> B </option>
+          <option> A </option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td class = "left"> Teknik 1 </td>
+        <td id="12"> 150 </td>
+          <td>
+           <select id="37">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </select>
+          </td>
+        </td>
+      </tr>
+        <tr>
+          <td class = "left"> Fysik 1a </td>
+          <td id="13"> 150 </td>
+            <td>
+             <select id="38">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Fysik 2 </td>
+          <td id="14"> 100 </td>
+            <td>
+             <select id="39">>
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Engelska 5 </td>
+          <td id="15"> 100 </td>
+            <td>
+             <select id="40">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Engelska6 </td>
+          <td id="16"> 100 </td>
+            <td>
+             <select id="41">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Dator och nätverksteknik </td>
+          <td id="17"> 100 </td>
+          <td>
+           <select id="42">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <td class = "left"> Programmering 1 </td>
+          <td id="18"> 100 </td>
+            <td>
+             <select id="43">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Programmering 2 </td>
+          <td id="19"> 100 </td>
+            <td>
+             <select id="44">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class = "left"> Webbutvecklig 1 </td>
+          <td id="20"> 100 </td>
+          <td>
+           <select id="45">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <td class = "left"> Webbutvecklig 2 </td>
+          <td id="21"> 100 </td>
+          <td> <select id = "46">
+            <option> F </option>
+            <option> E </option>
+            <option> D </option>
+            <option> C </option>
+            <option> B </option>
+            <option> A </option>
+          </td>
+
+          <tr>
+            <td class ="left"> Kemi </td>
+            <td id="22"> 100 </td>
+            <td> <select id = "47">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </td>
+            <tr>
+              <td class ="left"> Gränsnittsdesign </td>
+              <td id="23"> 100 </td>
+                <td> <select id = "48">
+                  <option> F </option>
+                  <option> E </option>
+                  <option> D </option>
+                  <option> C </option>
+                  <option> B </option>
+                  <option> A </option>
+                </td>
+            </tr>
+            <tr>
+            <td class ="left"> Webbserverprogramering </td>
+            <td id="24"> 100 </td>
+            <td> <select id = "49">
+              <option> F </option>
+              <option> E </option>
+              <option> D </option>
+              <option> C </option>
+              <option> B </option>
+              <option> A </option>
+            </td>
+            </tr>
+            <tr>
+              <td class = "left"> Gymnasiearbete </td>
+              <td id="25"> 100 </td>
+              <td> <select id="50">
+                <option> F </option>
+                <option> E </option>
+                <option> D </option>
+                <option> C </option>
+                <option> B </option>
+                <option> A </option>
+              </td>
+            </tr>
+    </table>
+
+    <div id="textbar">
+    <p id="text"> </p>
+  </div>
+
+    <!-- När man trycker på knappen skrivs det ut hur mycket meritvärde och hur många poäng man har -->
+    <button type = "button" id="button"  onclick = "rekna()"> Räkna ut dina poäng </button>
+
+  </body>
+</html>
